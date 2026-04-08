@@ -1,0 +1,12 @@
+{
+  "name": "flc-ubs",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace @flc-ubs/web run dev",
+    "build:web": "npm --workspace @flc-ubs/web run build",
+    "lint:web": "npm --workspace @flc-ubs/web run lint"
+  }
+}
