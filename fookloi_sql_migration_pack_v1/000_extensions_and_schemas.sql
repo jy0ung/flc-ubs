@@ -7,6 +7,7 @@ create extension if not exists pg_trgm;
 create schema if not exists core;
 create schema if not exists sales;
 create schema if not exists svc;
+create schema if not exists inv;
 create schema if not exists acct;
 create schema if not exists hr;
 create schema if not exists audit;
@@ -69,6 +70,19 @@ create type hr.leave_request_status as enum (
   'approved',
   'rejected',
   'cancelled'
+);
+
+create type inv.adjustment_type as enum (
+  'stock_in',
+  'stock_out',
+  'adjustment',
+  'transfer'
+);
+
+create type inv.stock_status as enum (
+  'active',
+  'discontinued',
+  'out_of_stock'
 );
 
 create type core.notification_status as enum (

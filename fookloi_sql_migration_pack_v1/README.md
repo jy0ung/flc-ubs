@@ -14,6 +14,7 @@ This pack is designed for a self-hosted Supabase / PostgreSQL deployment.
 - `007_indexes.sql`
 - `008_functions_and_triggers.sql`
 - `009_seed_baseline.sql`
+- `010_inventory_tables.sql`
 - `999_full_pack.sql`
 
 ## Intended order

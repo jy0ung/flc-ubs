@@ -1564,5 +1564,66 @@ grant select on analytics.vw_ar_aging_latest to authenticated, service_role;
 grant select on analytics.vw_booking_pipeline_open to authenticated, service_role;
 grant select on analytics.vw_work_order_backlog to authenticated, service_role;
 
-commit;
+-- Inventory RLS policies
+alter table inv.products enable row level security;
+alter table inv.stock_levels enable row level security;
+alter table inv.stock_movements enable row level security;
+alter table inv.adjustments enable row level security;
+
+drop policy if exists products_branch_access on inv.products;
+create policy products_branch_access on inv.products
+  for all to authenticated
+  using (
+    branch_id in (
+      select branch_id from core.user_branch_access
+      where user_id = core.current_app_user_id()
+    )
+  );
+
+drop policy if exists stock_levels_branch_access on inv.stock_levels;
+create policy stock_levels_branch_access on inv.stock_levels
+  for all to authenticated
+  using (
+    branch_id in (
+      select branch_id from core.user_branch_access
+      where user_id = core.current_app_user_id()
+    )
+  );
+
+drop policy if exists stock_movements_branch_access on inv.stock_movements;
+create policy stock_movements_branch_access on inv.stock_movements
+  for all to authenticated
+  using (
+    branch_id in (
+      select branch_id from core.user_branch_access
+      where user_id = core.current_app_user_id()
+    )
+  );
+
+drop policy if exists adjustments_branch_access on inv.adjustments;
+create policy adjustments_branch_access on inv.adjustments
+  for all to authenticated
+  using (
+    branch_id in (
+      select branch_id from core.user_branch_access
+      where user_id = core.current_app_user_id()
+      and role in ('manager', 'admin')
+    )
+  );
+
+drop policy if exists products_service_role on inv.products;
+create policy products_service_role on inv.products
+  for all using (auth.jwt() ->> 'role' = 'service_role');
+
+drop policy if exists stock_levels_service_role on inv.stock_levels;
+create policy stock_levels_service_role on inv.stock_levels
+  for all using (auth.jwt() ->> 'role' = 'service_role');
+
+drop policy if exists stock_movements_service_role on inv.stock_movements;
+create policy stock_movements_service_role on inv.stock_movements
+  for all using (auth.jwt() ->> 'role' = 'service_role');
+
+drop policy if exists adjustments_service_role on inv.adjustments;
+create policy adjustments_service_role on inv.adjustments
+  for all using (auth.jwt() ->> 'role' = 'service_role');
 

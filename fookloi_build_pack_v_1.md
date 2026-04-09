@@ -5,7 +5,7 @@
 **Date:** 2026-04-08  
 **Deployment Target:** Ubuntu Server, Intel i3 9th Gen, 16GB DDR4 RAM, NVMe SSD  
 **Backend Target:** Self-hosted Supabase Stack  
-**Product Scope:** Sales + Service first, Finance/Accounting controls, Executive analytics, HR Leave Management
+**Product Scope:** Sales + Service first, Finance/Accounting controls, Executive analytics, HR Leave Management, Basic Inventory
 
 ---
 
@@ -36,6 +36,7 @@ Build a secure, role-based, on-premise Unified Business Suite for Fook Loi Corpo
 - supports Sales and Service as the operational core
 - adds Finance/Accounting approvals and AR aging visibility
 - includes HR Leave Management as the first HR module
+- provides basic inventory tracking and warehouse management
 - remains performant on a single modest Ubuntu server
 
 ---
@@ -85,13 +86,18 @@ Build a secure, role-based, on-premise Unified Business Suite for Fook Loi Corpo
 - leave balance tracking
 - leave reporting
 
-## 3.2 Explicitly Out of Scope for V1
+### Inventory
+- product/item master
+- stock levels and tracking
+- inventory adjustments
+- basic warehouse management
+- stock movement logging
 - payroll
 - employee claims
 - recruitment
 - attendance/clock-in
 - procurement
-- inventory/warehouse ERP
+- full warehouse ERP (advanced features like multi-location, batch tracking)
 - customer self-service portal
 - public e-commerce booking flow
 - deep OEM integrations

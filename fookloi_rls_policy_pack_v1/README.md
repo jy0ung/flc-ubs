@@ -11,6 +11,7 @@ This pack adds **Row Level Security (RLS)**, helper functions, grants, and polic
 - `004_accounting_rls.sql`
 - `005_hr_rls.sql`
 - `006_audit_analytics_rls.sql`
+- `007_inventory_rls.sql`
 - `999_full_pack.sql`
 
 ## Intended order

@@ -28,10 +28,10 @@ Assumed identity model: all internal users authenticate via Supabase Auth; custo
 Assumed document needs: Sales receipts, invoices, service attachments, and HR leave attachments (MC/doctor letter) require object storage. Supabase Storage supports this and can be configured to use an S3-compatible backend such as MinIO. citeturn12search2turn4search1  
 
 In-scope modules (prioritised):
-Sales, Service, Admin (reference data), Finance (approvals + payment/refund workflows), Accounting skeleton (journals + AR/AP placeholder), HR Core (leave only).
+Sales, Service, Admin (reference data), Finance (approvals + payment/refund workflows), Accounting skeleton (journals + AR/AP placeholder), HR Core (leave only), Inventory (basic tracking).
 
 Out of scope:
-Payroll (explicitly excluded); complex ERP manufacturing/inventory; full customer-facing omnichannel CRM.
+Payroll (explicitly excluded); complex ERP manufacturing/inventory (basic inventory tracking included); full customer-facing omnichannel CRM.
 
 ## Target architecture and local deployment design
 
