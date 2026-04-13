@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { createClient } from '@/lib/supabase-server'
 import { redirect } from 'next/navigation'
 
@@ -43,18 +44,18 @@ export default async function Dashboard() {
           <div className="bg-white p-6 rounded-lg shadow">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
             <div className="space-y-2">
-              <a href="/sales/customers/new" className="block w-full text-left px-4 py-2 bg-blue-50 hover:bg-blue-100 rounded">
+              <Link href="/sales/customers/new" className="block w-full text-left px-4 py-2 bg-blue-50 hover:bg-blue-100 rounded">
                 Add New Customer
-              </a>
-              <a href="/sales/bookings/new" className="block w-full text-left px-4 py-2 bg-blue-50 hover:bg-blue-100 rounded">
+              </Link>
+              <Link href="/sales/bookings/new" className="block w-full text-left px-4 py-2 bg-blue-50 hover:bg-blue-100 rounded">
                 Create Booking
-              </a>
-              <a href="/service/appointments/new" className="block w-full text-left px-4 py-2 bg-blue-50 hover:bg-blue-100 rounded">
+              </Link>
+              <Link href="/service/appointments/new" className="block w-full text-left px-4 py-2 bg-blue-50 hover:bg-blue-100 rounded">
                 Schedule Service
-              </a>
-              <a href="/inventory/products/new" className="block w-full text-left px-4 py-2 bg-blue-50 hover:bg-blue-100 rounded">
+              </Link>
+              <Link href="/inventory/products/new" className="block w-full text-left px-4 py-2 bg-blue-50 hover:bg-blue-100 rounded">
                 Add Product
-              </a>
+              </Link>
             </div>
           </div>
 
